@@ -102,4 +102,4 @@ truncate table 表;
 #
 ```
 
-![5%20DML%E8%AF%AD%E8%A8%80%E5%9F%BA%E7%A1%80%2073cebc46f1fc4678aa4b261a00a5e9d6/2021-04-13_22.15.01.png](5%20DML%E8%AF%AD%E8%A8%80%E5%9F%BA%E7%A1%80%2073cebc46f1fc4678aa4b261a00a5e9d6/2021-04-13_22.15.01.png)
+![../figures/2021-04-13_22.15.01.png](../figures/2021-04-13_22.15.01.png)
