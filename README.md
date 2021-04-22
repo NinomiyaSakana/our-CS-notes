@@ -25,5 +25,5 @@
 
 ## JavaScript
 
-[事件和DOM](./JavaScript/js_event_and_DOm.md)
+[事件和DOM](./JavaScript/js_event_and_DOM.md)
 
