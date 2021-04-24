@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="zh_CN">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script type="text/javascript" src="script/jquery-1.7.2.js"></script>
+    <script type="text/javascript">
+
+        $(function (){
+            // //不传参数是获取
+            // //传递参数是设置
+            // alert($("div").html());//获取
+            // $("div").html("<h1>我是div中的标题1</h1>");//设置
+
+            //val是处理表单项的
+            $("button").click(function (){
+                alert($("username").val());//获取
+                $("username").val("chaoji"); //输入
+            })
+
+        });
+
+    </script>
+</head>
+<body>
+    <div>我是div标签<span>我是div中的span标签</span> </div>
+    <input type="text" name="username" id="username" />
+    <button>操作输入框</button>
+</body>
+</html>
