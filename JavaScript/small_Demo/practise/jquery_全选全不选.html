@@ -1,0 +1,107 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>Insert title here</title>
+    <script type="text/javascript" src="../../script/jquery-1.7.2.js"></script>
+    <script type="text/javascript">
+
+        $(function () {
+            //全选 绑定单机事件
+            //有id直接用id
+            $("#checkedAllBtn").click(function () {
+                $(":checkbox").prop("checked", true);
+            });
+
+            //全不选
+            $("#checkedNoBtn").click(function () {
+                $(":checkbox").prop("checked", false);
+            });
+
+            //反选
+            $("#checkedRevBtn").click(function () {
+                //只操作下面四个
+                //看name 过滤掉最上面的一，查询全部球类的复选框
+                var $checkedbodies = $(":checkbox[name='items']");
+
+                $checkedbodies.each(function () {
+                    //在ecah遍历的function函数中有一个this对象
+                    //这个对象是当前遍历的dom对象
+                    this.checked = !this.checked;
+                });
+                //遍历完之后检查是否满选，选满了那么就把上面的勾起来
+                //获取全部的球类个数
+                //再获取选中的球类个数
+                //比较他们的值
+                var allcount = $(":checkbox[name='items']").length;
+
+                var checkedcount=$(":checkbox[name='items']:checked").length;
+
+                if(allcount==checkedcount){
+                    $("#checkedAllBox").prop("checked",true);
+                }else{
+                    $("#checkedAllBox").prop("checked",false);
+                }
+
+                //优化代码（NB）
+                //$("#checkedAllBox").prop("checked",allcount==checkedcount);
+
+
+                //提交
+                $("#sendBtn").click(function(){
+                    //获取选中球类的复选框
+                    $(":checkbox[name='items']:checked").each(function (){
+                        alert(this.value);
+                    })
+
+                });
+
+                //给全选和全部选绑定单机事件
+                $("#checkedAllBox").click(function (){
+                    //this是dom对象
+                    $(":checkbox[name='items']").prop("checked",this.checked);
+                });
+
+
+                //  给全部球类绑定单机事件,不管最后（第四个）选了哪个，都会让全选的框框勾选起来
+                $(":checkbox[name='items']").click(function(){
+                    var allcount = $(":checkbox[name='items']").length;
+
+                    var checkedcount=$(":checkbox[name='items']:checked").length;
+
+
+                    $("#checkedAllBox").prop("checked",allcount==checkedcount);
+
+
+                });
+
+
+
+
+            });
+
+
+        });
+
+    </script>
+</head>
+<body>
+
+<form method="post" action="">
+
+    你爱好的运动是？<input type="checkbox" id="checkedAllBox"/>全选/全不选
+
+    <br/>
+    <input type="checkbox" name="items" value="足球"/>足球
+    <input type="checkbox" name="items" value="篮球"/>篮球
+    <input type="checkbox" name="items" value="羽毛球"/>羽毛球
+    <input type="checkbox" name="items" value="乒乓球"/>乒乓球
+    <br/>
+    <input type="button" id="checkedAllBtn" value="全　选"/>
+    <input type="button" id="checkedNoBtn" value="全不选"/>
+    <input type="button" id="checkedRevBtn" value="反　选"/>
+    <input type="button" id="sendBtn" value="提　交"/>
+</form>
+
+</body>
+</html>

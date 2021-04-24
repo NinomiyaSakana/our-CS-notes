@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="zh_CN">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script type="text/javascript" src="script/jquery-1.7.2.js"></script>
+    <script type="text/javascript">
+
+        $(function () {
+            //attr
+            //传递一个参数：获取指定值
+            //传递两个参数：设置指定值
+            //alert($(":checkbox:first").attr("name"));//获取
+            //$(":checkbox:first").attr("name","abc");//设置,改了属性name的值
+
+
+
+
+            //alert($(":checkbox").attr("checked"));//官方觉得返回undefined是个错误
+            //如果之前没有checked这个属性的话
+            //attr不推荐操作checked，readOnly，selected，disabled
+            //所以要用prop属性
+
+            //prop
+            //alert($(":checkbox").prop("checked")); //返回false，比较直观
+
+            //attr操作自定义属性
+            $(":checkbox:first").attr("abc","abcValue");
+            alert($(":checkbox:first").attr("abc"));
+
+
+
+        });
+
+    </script>
+</head>
+<body>
+<body>
+<br/>
+多选：
+<input name="checkbox" type="checkbox" value="checkbox1"/>checkbox1
+<input name="checkbox" type="checkbox" value="checkbox2"/>checkbox2
+</body>
+</body>
+</html>
