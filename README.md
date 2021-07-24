@@ -1,5 +1,19 @@
-# my-CS-notes
+# our-CS-notes
+CS notes from [Sakana](https://github.com/NinomiyaSakana) & [Kayasu](https://github.com/Li-Huakang) :yellow_heart:
 自学笔记 不定期更新
+```bash
+# 更新目录索引README.md
+python contents.py
+```
+
+```md
+笔记索引目录结构
+# our-CS-notes
+## second-level directory name
+### third-level directory name
+...
+[markdown file title name](/path/name)
+```
 
 ## MySQL
 
