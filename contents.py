@@ -62,13 +62,13 @@ def gen(res, level, f, path=''):
         if(val==None):#.md
             if key in exclude_files:
                 continue
-            str = '[' + key + ']' + '(' + path + '/' + key.replace(' ', '%20') + ')' + '\n'
+            str = '[' + key + ']' + '(' + path + '/' + key.strip('.md').replace(' ', '%20') + ')' + '\n'
             f.write(str)
         else:#dir
             if level==2:
-                str = '\n'+'#'*level+key+'\n'
+                str = '\n'+'#'*level+' '+key+'\n'
             else:
-                str = '#'*level+key+'\n'
+                str = '#'*level+' '+key+'\n'
             f.write(str)
             gen(val, level+1, f, path+'/'+key)
 
