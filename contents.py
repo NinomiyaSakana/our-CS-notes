@@ -12,7 +12,8 @@ exclude_dirs = [".git", "figures"]
 exclude_files = ["README.md", "test.md"]
 
 front = """# our-CS-notes
-CS notes from [Sakana](https://github.com/NinomiyaSakana) & [Kayasu](https://github.com/Li-Huakang) :yellow_heart:
+CS notes from :yellow_heart:[Sakana](https://github.com/NinomiyaSakana) & [Kayasu](https://github.com/Li-Huakang) :yellow_heart:
+
 自学笔记 不定期更新
 ```bash
 # 更新目录索引README.md
@@ -62,7 +63,7 @@ def gen(res, level, f, path=''):
         if(val==None):#.md
             if key in exclude_files:
                 continue
-            str = '[' + key + ']' + '(' + path + '/' + key.strip('.md').replace(' ', '%20') + ')' + '\n' + '\n'
+            str = '[' + key.strip('.md') + ']' + '(' + path + '/' + key.replace(' ', '%20') + ')' + '\n' + '\n'
             f.write(str)
         else:#dir
             if level==2:
