@@ -1,5 +1,3 @@
-1、Spring
-
 ### 1.1 spring简介
 
 - Rod Johnson创始人，是音乐学的博士。
