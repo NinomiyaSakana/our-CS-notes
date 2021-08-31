@@ -15,7 +15,7 @@ python contents.py
 ## second-level directory name
 ### third-level directory name
 ...
-[markdown file title name](/path/name)
+[markdown file title name](./path/name)
 ```
 
 
