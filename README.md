@@ -3,6 +3,7 @@ CS notes from :yellow_heart:[Sakana](https://github.com/NinomiyaSakana) & [Kayas
 
 自学笔记 不定期更新
 ```bash
+# 更新目录添加Actions方法
 # 打开终端
 cd /path/of/the/repo
 # 更新目录索引README.md
