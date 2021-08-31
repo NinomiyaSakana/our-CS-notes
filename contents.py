@@ -59,13 +59,13 @@ def walktree(top, rst):
     return flag
 
 
-def gen(res, level, f, path=''):
+def gen(res, level, f, path='.'):
     for key in sorted(res):
         val = res[key]
         if(val==None):#.md
             if key in exclude_files:
                 continue
-            str = '[' + key.strip('.md') + ']' + '(' + path + '/' + key.replace(' ', '%20') + ')' + '\n' + '\n'
+            str = '[' + key.replace('.md','') + ']' + '(' + path + '/' + key.replace(' ', '%20') + ')' + '\n' + '\n'
             f.write(str)
         else:#dir
             if level==2:
@@ -79,7 +79,7 @@ def main():
     basepath = './'
     res = {}
     walktree(basepath, res)
-    with open('README.md', 'w+') as f:
+    with open('README.md', 'w+', encoding='utf-8') as f:
         f.write(front)
         gen(res,2,f)
 
