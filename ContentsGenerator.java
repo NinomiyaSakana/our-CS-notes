@@ -42,7 +42,7 @@ public static void main(String[] args) throws IOException {
     traverseAll(root, 1, res);
     writeRes(res, osw);
     osw.close();
-    printRes(res);
+    // printRes(res);
 }
 
 private static boolean traverseAll(File root, int level, TreeNode node){
@@ -80,7 +80,7 @@ private static boolean traverseAll(File root, int level, TreeNode node){
 
 private static boolean isValidDir(String dir){
     //is in dirs [.git .github figures] or not
-    HashSet<String> excludeList = new HashSet(Arrays.asList(".git",".github","figures"));//第一级目录要去除的文件夹
+    HashSet<String> excludeList = new HashSet<>(Arrays.asList(".git",".github","figures"));//第一级目录要去除的文件夹
     if(excludeList.contains(dir))return false;
     return true;
 }
